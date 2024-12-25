@@ -1,0 +1,23 @@
+git clone  https://github.com/espressif/ESP8266_RTOS_SDK
+
+sudo /usr/bin/python3 -m pip install --user -r /home/rajeshwar/ESP8266_RTOS_SDK/requirements.txt
+```
+$ vi ~/.bashrc
+export PATH=/home/rajeshwar/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/root/.local/bin
+$ source ~/.bashrc
+```
+pip install 'pyparsing>=2.0.3,<2.4.0' #note: pip -> pip3
+
+cd ~/ESP8266_RTOS_SDK/toolchain
+wget https://dl.espressif.com/dl/xtensa-esp32-elf-linux64-1.22.0-61-gab8375a-5.2.0.tar.gz 
+tar -xzf xtensa-esp32-elf-linux64-1.22.0-61-gab8375a-5.2.0.tar.gz
+export PATH=$PATH:~/ESP8266_RTOS_SDK/toolchain/xtensa-esp32-elf/bin
+
+cd ~/ESP8266_RTOS_SDK/examples/get-started/hello_world
+
+make menuconfig CONFIG_SDK_PYTHON=python3
+#note: set [SDK tool configuration  -> python=python3] 
+
+export IDF_PATH=~/ESP8266_RTOS_SDK/
+
+
