@@ -1,11 +1,13 @@
-{  "command": "MEDIA_PLAYBACK", "recording":"9_120624112805"}
-{ "command": "GET_MEDIA_LIST", "filter": { "type": "event",  "date_from": "2024-06-10", "date_to": "2024-12-24",  "limit": 50 }}
+{ "command": "GET_MEDIA_LIST", "filter": { "type": "event",  "date_from": "2024-06-10", "date_to": "2025-01-01",  "limit": 50 }}
 
-{ "command": "MEDIA_DELETE", "sub_command":"multi_recording", "recordings": ["120324171653" ,"120224172134"]}
+{ "command": "MEDIA_DELETE", "sub_command":"multi_recording", "recordings": ["122624125950" ,"122624130112"]}
 
-{ "command": "MEDIA_PLAYBACK","recording":"122324141414"}
+{ "command": "MEDIA_PLAYBACK","recording":"122524155006"}
 
-{ "command": "MEDIA_DOWNLOAD","recording":"120924123920"}
+{ "command": "MEDIA_DOWNLOAD","recording":"010125232822"}
+
+{ "command": "MEDIA_MANAGEMENT_STOP","recording":"122524155006"}
+
 set print thread-events off
 set print symbol-loading off
 
@@ -13,9 +15,18 @@ sudo valgrind --tool=memcheck --leak-check=full --track-origins=yes ./vdb_applic
 
 wscat -c ws://localhost:8080 // to send request to vdb_application server
 
-sudo gst-launch-1.0 playbin uri=rtsp://127.0.0.1:5001/122324141414 // to test running stream
+..........................................
+play video -> 
+sudo gst-launch-1.0 playbin uri=rtsp://127.0.0.1:5001/122524155006 // to test running stream
 
------------------------------------------------------------------------------x-------------------x------------------x-------------------x----------------------------------------------------
+-------------------------------------------
+Download video ->
+curl -o downloaded_video.mp4 http://localhost:9000/download
+gst-launch-1.0 playbin uri=downloaded_video.mp4
+...........................................
 
 
 sched_yield();
+
+sudo fuser -k 36223/udp
+

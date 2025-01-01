@@ -49,9 +49,9 @@ int main(int argc, char *argv[]) {
     // Set up the request handler
     soup_server_add_handler(server, NULL, on_request, NULL, NULL);
 
-    // Start the server on port 8080
-    if (soup_server_listen_all(server, 8080, SOUP_SERVER_LISTEN_IPV4_ONLY, NULL)) {
-        printf("Server running on http://localhost:8080\n");
+    // Start the server on port 5003
+    if (soup_server_listen_all(server, 5003, SOUP_SERVER_LISTEN_IPV4_ONLY, NULL)) {
+        printf("Server running on http://localhost:5003\n");
 
         // Run the server event loop
         GMainLoop *loop = g_main_loop_new(NULL, FALSE);
