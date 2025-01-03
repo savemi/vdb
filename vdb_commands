@@ -22,7 +22,9 @@ sudo gst-launch-1.0 playbin uri=rtsp://127.0.0.1:5001/122524155006 // to test ru
 -------------------------------------------
 Download video ->
 curl -o downloaded_video.mp4 http://localhost:9000/download
-gst-launch-1.0 playbin uri=downloaded_video.mp4
+curl -O http://localhost:8080/video
+sudo gst-launch-1.0 playbin uri=file://`pwd`/video.mp4
+
 ...........................................
 
 
