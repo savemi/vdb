@@ -1,5 +1,7 @@
 wget http://www.live555.com/liveMedia/public/live555-latest.tar.gz
 
+cd $HOME
+
 tar -xvf live555-latest.tar.gz
 
 cd live
