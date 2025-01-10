@@ -1,0 +1,11 @@
+wget http://www.live555.com/liveMedia/public/live555-latest.tar.gz
+
+tar -xvf live555-latest.tar.gz
+
+vi config.linux #node add `-std=c++2a` to CPLUSPLUS_FLAGS 
+
+export CXXFLAGS="$CXXFLAGS -DNO_STD_LIB"
+
+./genMakefiles linux
+
+make
