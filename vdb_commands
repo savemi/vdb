@@ -32,3 +32,10 @@ sched_yield();
 
 sudo fuser -k 36223/udp
 
+
+
+##system config
+
+echo "127.0.0.1    localhost vdb.local" > /etc/hosts
+`curl -O http://vdb.local:8080/media/9_011525161531.mp4`
+
